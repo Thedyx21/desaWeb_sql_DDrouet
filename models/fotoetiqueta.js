@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'fotoetiqueta',
-    tableName: 'fotoetiquetas',
+    tableName: 'fotoetiqueta',
+    freezeTableName: true 
   });
   return fotoetiqueta;
 };
