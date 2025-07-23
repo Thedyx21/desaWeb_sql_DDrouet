@@ -4,6 +4,7 @@ var router = express.Router();
 const Sequelize = require('sequelize');
 const Etiqueta = require('../models').etiqueta;
 const Foto = require('../models').Foto;
+const fotoController = require('../controllers/fotoController');
 
 /* GET home page. */
 router.get('/findAll/json', function(req, res, next) {
@@ -38,6 +39,10 @@ router.get('/findAll/view', function(req, res, next) {
   })
   .catch(error => res.status(400).send(error));
 });
+
+router.get('/findById/json/:id', fotoController.findByIdJson);
+router.get('/findById/view/:id', fotoController.findByIdView);
+
 
 
 

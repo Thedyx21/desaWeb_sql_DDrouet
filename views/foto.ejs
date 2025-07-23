@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title><%= foto.titulo %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+  <h1>Foto ID: <%= foto.id %></h1>
+
+  <p><strong>Título:</strong> <%= foto.titulo %></p>
+  <p><strong>Descripción:</strong> <%= foto.descripcion %></p>
+  <p><strong>Calificación:</strong> <%= foto.calificacion %></p>
+
+  <p><strong>Imagen:</strong></p>
+  <td><img src="/fotos/<%= foto.tuta %>" width="200"></td>
+
+  <h3 class="mt-4">Etiquetas:</h3>
+  <ul>
+    <% foto.etiqueta.forEach(function(tag) { %>
+      <li><%= tag.texto %></li>
+    <% }); %>
+  </ul>
+
+  <a href="/fotos/findAll/view" class="btn btn-secondary mt-3">Volver</a>
+</body>
+</html>
